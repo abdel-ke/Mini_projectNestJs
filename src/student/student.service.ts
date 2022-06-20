@@ -32,6 +32,7 @@ export class StudentService {
 					id: studentById,
 					...payload
 				}
+				return updateStudent;
 			}else return students;
 		});
 		this.students = updateStudentList;
@@ -51,6 +52,7 @@ export class StudentService {
 					...students,
 					teacher:teacherId
 				}
+				return updateStudent;
 			}else return students;
 		});
 		this.students = updateStudentList;
