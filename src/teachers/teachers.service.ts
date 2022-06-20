@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { FindTeacherResponseDto } from '../teachers/dto/teacher.dto'
+import { FindTeacherResponseDto } from './dto/teacher.dto'
 import { teachers } from '../db'
-import { teacher } from './teacher.contoller';
 
 @Injectable()
 export class TeachersService {

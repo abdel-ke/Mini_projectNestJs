@@ -25,7 +25,7 @@ export class StudentController {
 	@Put('/:studentById')
 	updateStudent(
 		@Param('studentById') sId : string,
-		@Body('name') body : UpdateStudentDto
+		@Body() body : UpdateStudentDto
 	) : StudentResponseDto {
 		return this.studentService.updateStudent(body, sId);
 	}

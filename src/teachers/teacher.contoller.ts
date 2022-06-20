@@ -11,7 +11,7 @@ export class teacher{
 	}
 	@Get('/:teacherId')
 	getTeacherByID(
-		@Param() tId: string
+		@Param('teacherId') tId: string
 	) : FindTeacherResponseDto {
 		return this.teacherService.getTeacherByID(tId);
 	}

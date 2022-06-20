@@ -25,13 +25,14 @@ export class StudentService {
 	}
 	updateStudent(payload: UpdateStudentDto, studentById: string) : StudentResponseDto{
 		let updateStudent: StudentResponseDto;
-		const updateStudentList = this.students.map(students =>{
+		let updateStudentList = this.students.map(students =>{
+			console.log("im here");
 			if (students.id === studentById)
 			{
 				updateStudent = {
-					id: studentById,
+					id : studentById,
 					...payload
-				}
+				};
 				return updateStudent;
 			}else return students;
 		});
@@ -40,7 +41,7 @@ export class StudentService {
 	}
 	getStudentByteacherId(teacherId:string) : FindStudentResponseDto[] {
 		return this.students.filter(students =>{
-			return students.teacher;
+			return students.teacher === teacherId;
 		})
 	}
 	updateStudentTeacher(teacherId: string, studentById:string) : StudentResponseDto{
